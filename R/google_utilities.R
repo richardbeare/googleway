@@ -208,15 +208,17 @@ constructURL <- function(map_url, urlArgs){
 
   return(
     utils::URLencode(
+      enc2utf8(
       paste0(map_url,
              paste0("&",
              paste0(names(urlArgs)),
              "=",
              paste0(urlArgs), collapse = "")
              )
-      , reserved = F
       )
+      , reserved = F
     )
+  )
 }
 
 # Construct Waypoints
